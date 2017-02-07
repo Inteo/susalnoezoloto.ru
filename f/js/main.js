@@ -1,3 +1,4 @@
+
 function same_height() {
   $(".same-height").each(function(){
     $(".same-height__row").each(function(){
@@ -24,4 +25,29 @@ $(document).ready(function() {
       $(this).attr("placeholder", "Поиск товаров")
   });
   same_height();
+  $(".switcher__btn").click(function(){
+    $(this).closest(".switcher__control").find(".switcher__btn").removeClass("active");
+    $(this).addClass("active");
+    var holder = $(this).closest(".switcher").find(".switcher__holder");
+    holder.removeClass("switcher__holder_active");
+    holder.filter('[data-switch-hold='+$(this).data("switch-btn")+']').addClass("switcher__holder_active");
+    return false;
+  });
+  $(".scroll-open__trig").click(function(){ 
+    $(this).toggleClass("active");
+    $(this).closest(".scroll-open").find(".scroll-open__content").slideToggle();
+    return false;
+  });
+  $('.btn-minuse').on('click', function(){
+    if($(this).parent().siblings('input').val() > 1) 
+    {
+      $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1);
+      return false;
+    }
+  })
+  $('.btn-pluss').on('click', function(){            
+    $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1);
+  })
 });
+
+    
