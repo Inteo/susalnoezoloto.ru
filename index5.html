@@ -8,6 +8,7 @@
   <script src="f/js/jquery-1.11.3.min.js"></script>
   <script src="f/js/jquery.flexslider-min.js"></script>
   <script src="f/js/develplatform.editable.select.js"></script>
+  <script src="f/js/validator.min.js"></script>
   <script src="f/js/main.js"></script>
 </head>
 <body> 
@@ -151,25 +152,297 @@
             <span class="switcher__btn active" data-switch-btn="or1"><i class="icon-privat"></i>Частное лицо
             </span><span class="switcher__btn" data-switch-btn="or2"><i class="icon-enterprise"></i>Предприятие</span>
           </div>
-          <div class="switcher__wrap">
-            <div class="switcher__holder switcher__holder_active" data-switch-hold="or1">
-              <div class="order-reg__subtitle">
-                <span>Ваше местоположение</span>
-              </div>
-              <div class="order-reg__city-select">
-                <div class="order-reg__city-select-wrap">
-                  <select name="" id="citySelect">
-                    <option value="1">Москва</option>
-                    <option value="2">Санкт-Петербург</option>
-                    <option value="3">Ярославль</option>
-                  </select>
+          <div class="switcher__wrap row">
+            <div class="col-xs-12 col-lg-8">
+              <div class="switcher__holder switcher__holder_active" data-switch-hold="or1">
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Ваше местоположение</span>
+                    </div>
+                    <div class="order-reg__city-select">
+                      <div class="order-reg__city-select-wrap">
+                        <select name="" id="citySelect">
+                          <option value="1">Москва</option>
+                          <option value="2">Санкт-Петербург</option>
+                          <option value="3">Ярославль</option>
+                        </select>
+                      </div>
+                      <p>Начните вводить адрес, и&nbsp;выберите подходящий вариант из&nbsp;предложенных.</p>
+                      <p>Если не&nbsp;нашли свой город, в&nbsp;выпадающем списке выберите &laquo;Добавить местоположение&raquo;Затем пункт &lsquo;&rsquo;Выберите местоположение&nbsp;&mdash; Другое местоположение&quot;Укажите свой город в&nbsp;появившемся поле.</p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
                 </div>
-                <p>Начните вводить адрес, и&nbsp;выберите подходящий вариант из&nbsp;предложенных.</p>
-                <p>Если не&nbsp;нашли свой город, в&nbsp;выпадающем списке выберите &laquo;Добавить местоположение&raquo;Затем пункт &lsquo;&rsquo;Выберите местоположение&nbsp;&mdash; Другое местоположение&quot;Укажите свой город в&nbsp;появившемся поле.</p>
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Способ получения заказа</span> 
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to1" name="taking-order" checked="checked">
+                      <label for="to1">Самовывоз - <span>0<i class="rub">&#8399;</i></span></label>
+                      <p>Забираете товар в нашем пункте самовывоза</p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to2" name="taking-order">
+                      <label for="to2">СDEK - До двери - <span>200<i class="rub">&#8399;</i></span></label>
+                      <p>Курьер заранее согласует время получения. <br>Доставка быстро и недорого.</p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to3" name="taking-order">
+                      <label for="to3">СDEK - До терминала - <span>150<i class="rub">&#8399;</i></span></label>
+                      <p>Забрать товар в терминале. <br>
+                        <a href="#" class="underline">Выбрать ближайший терминал</a>
+                      </p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to4" name="taking-order">
+                      <label for="to4">EMS Почта России - <span>340<i class="rub">&#8399;</i></span></label>
+                      <p>Доставка до двери. Во все населенные пункты страны.</p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to5" name="taking-order">
+                      <label for="to5">Пеший курьер - <span>Расчитает менеджер</span></label>
+                      <p>Только Москва и Московская область. <br>
+                        Можно оплатить при получении. <br>
+                       Доставка за 3 часа в любое удобное время.
+                      </p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to6" name="taking-order">
+                      <label for="to6">Постаматы PickPoint - <span>340<i class="rub">&#8399;</i></span></label>
+                      <p>Доставка в автоматизированный терминал<br>
+                        <a href="#" class="underline">Выбрать ближайший терминал</a>
+                      </p>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="to7" name="taking-order">
+                      <label for="to7">Хочу другой способ - <span>Расчитает менеджер</span></label>
+                      <p>Укажите свой вариант доставки. <br>Мы постараемся вам помочь.</p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div>    
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Пункт самовывоза</span> 
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="tp1" name="taking-place" checked="checked">
+                      <label for="tp1"><span>ул. Летниковская, д. 9, стр. 1, 3-й этаж, офис 53</span>
+                        <span>пн.-пт.: 10:00 до 18:00</span>
+                      </label>
+                      <p>На здании табличка "Открытое акционерное общество <br>НПО "Буровая техника" ВНИИБТ". Справа вход в чёрную дверь. </p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div> 
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Способ оплаты</span> 
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="p1" name="payment" checked="checked">
+                      <label for="p1">Оплата при получении</label>
+                      <p>Оплатить наличными или  банковской картой</p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div>   
+                <form class="order-reg__wrap clearfix" id="regOrderForm">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Ваши данные</span> 
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="name">ФИО <span>*</span></label>
+                      </div>
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="text" class="form-control" pattern="[а-яА-ЯёЁa-zA-Z]{6,}" required id="name" placeholder="ФИО">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="phone">Телефон <span>*</span></label>
+                      </div>  
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="tel" pattern="[+][7]{1}[0-9]{10}" required class="form-control" id="phone" placeholder="Телефон">
+                        <p class="help-block">Необходим для связи с вами и уточнений по заказу</p>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="email">Эл. почта <span>*</span></label>
+                      </div>
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required id="email" class="form-control" placeholder="Эл. почта">
+                        <p class="help-block">Необходима для получения информации о статусе заказа</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-offset-2 col-lg-10 col-xs-12">
+                        <div class="order-reg__what-is">
+                          <div class="checkbox">
+                            <input type="checkbox" id="reg">
+                            <label for="reg">Хочу зарегистрироваться на сайте</label>
+                          </div>
+                          <a href="#" class=""><i class="i-qst i-qst_left"></i><span class="pseudo">Что это дает?</span></a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn order-reg__next">Далее<i class="arrow"></i></button>
+                </form> 
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Ваш заказ</span> 
+                    </div>
+                    <div class="order-reg__your-order">
+                      <p>
+                        <span>Сусальное золото NORIS  23 Карата, 1,25 гр. </span>
+                        <span>2 шт.</span>
+                        <span>12 800<i class="rub">&#8399;</i></span>
+                      </p>
+                      <p>
+                        <span>Сусальное серебро NORIS 25 листов, 585 проба</span>
+                        <span>1 шт.</span>
+                        <span>900<i class="rub">&#8399;</i></span>
+                      </p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div> 
+                <div class="row">
+                  <div class="order-reg__accept col-md-offset-2 col-xs-12 col-md-10">
+                    <div class="checkbox">
+                      <input type="checkbox" id="acc1">
+                      <label for="acc1">Я подтверждаю свое согласие на получение информации об оформлении и получении заказа и согласие на обработку персональных данных</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="acc2">
+                      <label for="acc2">Я согласен с <a href="#" class="underline">договором публичной оферты</a></label>
+                    </div>
+                    <a href="#" class="btn btn-filled"><i class="i-check"></i>Подтвердить заказ</a>
+                  </div>
+                </div>
+              </div>
+              <div class="switcher__holder" data-switch-hold="or2">
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <p class="order-reg__caption">Заполнение реквизитов не требуется. Пришлите нам карточку сведений о вашем предприятии и другие необходимые документы</p>
+                    <div class="order-reg__subtitle">
+                      <span>Способ оформления</span>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="so1" name="taking-order" checked="checked">
+                      <label for="so1">Выставление счета</label>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="so2" name="taking-order">
+                      <label for="so2">Договор разовой поставки</label>
+                    </div>
+                    <div class="order-reg__radio">
+                      <input type="radio" id="so3" name="taking-order">
+                      <label for="so3">Договор регулярных поставок</label>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div>
+                <form class="order-reg__wrap clearfix" id="regOrderForm2">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Ваши данные</span>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="name">ФИО <span>*</span></label>
+                      </div>
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="text" class="form-control" pattern="[а-яА-ЯёЁa-zA-Z]{6,}" required id="name2" placeholder="ФИО">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="phone">Телефон <span>*</span></label>
+                      </div>  
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="tel" pattern="[+][7]{1}[0-9]{10}" required class="form-control" id="phone2" placeholder="Телефон">
+                        <p class="help-block">Необходим для связи с вами и уточнений по заказу</p>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        <label for="email">Эл. почта <span>*</span></label>
+                      </div>
+                      <div class="col-lg-10 col-xs-12">
+                        <input type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required id="email2" class="form-control" placeholder="Эл. почта">
+                        <p class="help-block">Необходима для получения информации о статусе заказа</p>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-2 col-xs-12">
+                        Сведения о предприятии
+                      </div>
+                      <div class="col-lg-10 col-xs-12">
+                        <div class="order-reg__add-file">
+                          <a href="#" class="btn"><i></i>Добавить файл</a>
+                          <p>
+                            <span><i class="icon-file"></i>Карточка сведений. pdf<b></b></span>
+                            <span><i class="icon-file"></i>Реквизиты предприятия и прочее....pdf<b></b></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn order-reg__next">Далее<i class="arrow"></i></button>
+                </form>
+                <div class="order-reg__wrap clearfix">
+                  <div class="order-reg__holder">
+                    <div class="order-reg__subtitle">
+                      <span>Ваш заказ</span> 
+                    </div>
+                    <div class="order-reg__your-order">
+                      <p>
+                        <span>Сусальное золото NORIS  23 Карата, 1,25 гр. </span>
+                        <span>2 шт.</span>
+                        <span>12 800<i class="rub">&#8399;</i></span>
+                      </p>
+                      <p>
+                        <span>Сусальное серебро NORIS 25 листов, 585 проба</span>
+                        <span>1 шт.</span>
+                        <span>900<i class="rub">&#8399;</i></span>
+                      </p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn order-reg__next">Далее<i class="arrow"></i></a>
+                </div>
+                <div class="row">
+                  <div class="order-reg__accept col-md-offset-2 col-xs-12 col-md-10">
+                    <div class="checkbox">
+                      <input type="checkbox" id="acc3">
+                      <label for="acc1">Я подтверждаю свое согласие на получение информации об оформлении и получении заказа и согласие на обработку персональных данных</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="acc4">
+                      <label for="acc2">Я согласен с <a href="#" class="underline">договором публичной оферты</a></label>
+                    </div>
+                    <a href="#" class="btn btn-filled"><i class="i-check"></i>Подтвердить заказ</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="switcher__holder" data-switch-hold="or2">
-              2
+            <div class="col-xs-0 col-lg-4">
+              <div class="order-reg__total">
+                <p class="clearfix"><span>Стоимость (3 шт.):</span><span>13 700<i class="rub">&#8399;</i></span></p>
+                <p class="clearfix"><span>Доставка:<a href="#"><i class="i-qst"></i></a></span><span>Выберите</span></p>
+                <p class="clearfix"><span>Итого:</span><span>13 700<i class="rub">&#8399;</i></span></p>
+              </div>
             </div>
           </div>
         </div>
@@ -225,6 +498,8 @@
     (function() {
       $(window).load(function() {
         $("#citySelect").editableSelect();
+        $("#regOrderForm").validator();
+        $("#regOrderForm2").validator();
       });
     }());
   </script>
